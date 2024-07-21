@@ -34,5 +34,6 @@ func main() {
 		httpPort = "8080"
 	}
 	log.Println("Server started at http://localhost:" + httpPort)
+	log.Println("Use http://localhost:" + httpPort + "/getUrlContents to fetch and combine content from URLs")
 	log.Fatal(http.ListenAndServe(":"+httpPort, nil))
 }
