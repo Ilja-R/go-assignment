@@ -55,11 +55,9 @@ func TestFetchAndCombineContent(t *testing.T) {
 		},
 	}
 
-	fetcher := NewURLFetcher()
-
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			result, err := fetcher.FetchAndCombineContent(tt.urls)
+			result, err := FetchAndCombineContent(tt.urls)
 
 			if tt.hasError && err == nil {
 				t.Errorf("expected error but got none")

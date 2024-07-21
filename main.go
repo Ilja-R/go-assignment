@@ -12,11 +12,8 @@ var URLS = []string{
 	"raw.githubusercontent.com/golang/go/master/README.md",
 }
 
-// UrlFetcher is an interface for fetching and combining URL contents.
-var fetcher = NewURLFetcher()
-
 func getUrlContentsHandler(w http.ResponseWriter, _ *http.Request) {
-	content, err := fetcher.FetchAndCombineContent(URLS)
+	content, err := FetchAndCombineContent(URLS)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
